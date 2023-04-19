@@ -7,6 +7,8 @@ import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 
+import com.lkhpractice.member.dto.MemberDto;
+
 @Controller
 public class MemberController {
 	// login -> loginOk.jsp가 출력되는 RequestMapping
@@ -20,6 +22,19 @@ public class MemberController {
 	@RequestMapping(value = "/login2")
 	public String login2() {
 		return "login2";
+	}
+	
+	@RequestMapping(value = "/join")
+	public String join() {
+		return "join";
+	}
+	
+	@RequestMapping(value = "/joinOk")
+	public String joinOk(MemberDto memberDto, Model model) {
+		
+		model.addAttribute("memberDto", memberDto);
+		
+		return "joinOk";
 	}
 	
 	@RequestMapping(value = "loginOk2")
