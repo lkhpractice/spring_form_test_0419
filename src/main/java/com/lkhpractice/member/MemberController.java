@@ -4,6 +4,7 @@ import javax.servlet.http.HttpServletRequest;
 
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
+import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 
@@ -54,6 +55,14 @@ public class MemberController {
 		model.addAttribute("memberId", mid);
 		
 		return "loginOk";
+	}
+	
+	@RequestMapping(value = "/student/{studentId}") // {studentId} : 숫자만 받는 부분
+	public String studentId(@PathVariable String studentId, Model model) {
+		
+		model.addAttribute("studentNum", studentId);
+		
+		return "studentIdView";
 	}
 
 }
