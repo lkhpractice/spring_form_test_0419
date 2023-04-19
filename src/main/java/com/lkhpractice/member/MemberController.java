@@ -5,6 +5,7 @@ import javax.servlet.http.HttpServletRequest;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestParam;
 
 @Controller
 public class MemberController {
@@ -14,6 +15,19 @@ public class MemberController {
 	@RequestMapping(value = "/login")
 	public String login() {
 		return "login";
+	}
+	
+	@RequestMapping(value = "/login2")
+	public String login2() {
+		return "login2";
+	}
+	
+	@RequestMapping(value = "loginOk2")
+	public String loginOk2(@RequestParam("id") String mid, @RequestParam("pw") String mpw, Model model) {
+		
+		model.addAttribute("memberId", mid);
+		
+		return "loginOk";
 	}
 	
 	@RequestMapping(value = "/loginOk")
