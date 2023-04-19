@@ -7,7 +7,7 @@
 <title>회원로그인</title>
 </head>
 <body>
-	<form action="loginOk">
+	<form action="loginOk" method="get">
 		아이디:<input type="text" name="id"><br>
 		비밀번호:<input type="password" name="pw"><br>
 		<input type="submit" value="로그인">
